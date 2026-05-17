@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sylvy's HomePage">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <title>Sylvy - HomePage</title>
+    
+    <link rel="preload" href="./profile.webp" as="image">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="js/confetti.browser.min.js" defer></script>
+    <script src="js/sakuraPlus.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="nav-left"></div>
+            <nav class="navbar">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="https://blog.sylv.top/" class="nav-link" target="_blank" rel="noopener noreferrer">Blog</a>
+            </nav>
+            <div class="nav-right">
+                <button id="theme-toggle" class="nav-link theme-btn" aria-label="切换主题">
+                    <i class="ri-moon-fill" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-bg-pattern" aria-hidden="true"></div>
+        <div class="hero-content">
+            <div class="hero-avatar-container">
+                <img src="./profile.webp" alt="Sylvy Avatar" class="hero-avatar">
+            </div>
+            <h1 class="hero-title">嗨，我是 <span class="highlight">Sylvy</span></h1>
+            <p class="hero-subtitle">全栈开发者 <span class="whisper">实则全沾工程师（小声）</span></p>
+            <p id="hitokoto" class="hero-tagline">加载中...</p>
+        </div>
+        <div class="hero-reveal" aria-hidden="true">
+            <div class="hero-bg-pattern"></div>
+            <div class="hero-reveal-content">
+                <div class="hero-avatar-container">
+                    <img src="./profile.webp" alt="" class="hero-avatar">
+                </div>
+                <h1 class="hero-title">Hi, I Am <span class="highlight">Sylvy</span></h1>
+                <p class="hero-subtitle">Full Stack Developer <span class="whisper">(Jack of All Trades,Master of None)</span></p>
+                <p class="hero-tagline">Welcome to my homepage!</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">About Me</h2>
+            <p class="section-subtitle scroll-reveal">Sylvy</p>
+
+            <div class="bento-grid">
+                <div class="bento-row top-row">
+                    <div class="bento-card profile-card scroll-reveal">
+                        <div class="profile-header">
+                            <img src="./profile.webp" alt="Sylvy" class="avatar-large">
+                            <div class="profile-text">
+                                <h3 class="username-large">@Sylvy</h3>
+                                <p class="bio-text">不知名开发者</p>
+                            </div>
+                            <div class="online-indicator"></div>
+                        </div>
+                        <div class="profile-social">
+                            <a href="https://www.sylv.top/" class="social-btn" title="首页"><i class="ri-home-fill"></i></a>
+                            <a href="https://blog.sylv.top/" class="social-btn" title="博客"><i class="ri-quill-pen-fill"></i></a>
+                            <a href="mailto:sylvy@842166.xyz" class="social-btn" title="Email"><i class="ri-mail-fill"></i></a>
+                            <a href="https://github.com/zzrliu8421" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub"><i class="ri-github-fill"></i></a>
+                            <a href="https://qm.qq.com/q/Zv1uAlusee" target="_blank" rel="noopener noreferrer" class="social-btn" title="QQ"><i class="ri-qq-fill"></i></a>
+                        </div>
+                        <div class="profile-tags">
+                            <span class="tag"><i class="ri-code-s-slash-line"></i> Developer</span>
+                            <span class="tag"><i class="ri-open-source-fill"></i> Open Source</span>
+                            <span class="tag"><i class="ri-robot-2-fill"></i> Tech Explorer</span>
+                        </div>
+                    </div>
+
+                    <div class="right-column">
+                        <div class="stats-grid">
+                            <div class="bento-card stat-card scroll-reveal">
+                                <span class="stat-value">10+</span>
+                                <span class="stat-label">PROJECTS</span>
+                            </div>
+                            <div class="bento-card stat-card scroll-reveal">
+                                <span class="stat-value">100+</span>
+                                <span class="stat-label">COMMITS</span>
+                            </div>
+                            <div class="bento-card stat-card scroll-reveal">
+                                <span class="stat-value">1K+</span>
+                                <span class="stat-label">VISITORS</span>
+                            </div>
+                        </div>
+                        <div class="interaction-grid">
+                            <div class="bento-card like-card scroll-reveal" id="avatarClickArea">
+                                <i class="ri-heart-fill like-icon"></i>
+                                <span class="like-count">Click Me!</span>
+                                <span class="like-label">Try It</span>
+                            </div>
+                            <div class="bento-card badge-card">
+                                <span class="badge-emoji">🐟</span>
+                                <span class="badge-title">Slacker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-row bottom-row">
+                    <div class="bento-card feature-card bug-collector">
+                        <h3>Bug Collector</h3>
+                        <p class="feature-subtitle">CREATING WEIRD ISSUES</p>
+                        <div class="terminal-block">
+                            <div class="terminal-header">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                            </div>
+                            <div class="terminal-body">
+                                <p class="quote-text" id="quote">"It works on my machine"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-card feature-card creating-stack">
+                        <h3>Creating</h3>
+                        <p class="feature-subtitle">SOMETHING COOL.</p>
+                        <div class="stack-icons">
+                            <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+                            <i class="devicon-typescript-plain colored" title="TypeScript"></i>
+                            <i class="devicon-rust-original" title="Rust"></i>
+                            <i class="devicon-python-plain colored" title="Python"></i>
+                            <i class="devicon-php-plain colored" title="PHP"></i>
+                            <i class="devicon-vuejs-plain colored" title="Vue.js"></i>
+                            <i class="devicon-react-original colored" title="React"></i>
+                            <i class="devicon-dart-plain colored" title="Dart"></i>
+                            <i class="devicon-flutter-plain colored" title="Flutter"></i>
+                            <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+                            <i class="devicon-docker-plain colored" title="Docker"></i>
+                            <i class="devicon-linux-plain" title="Linux"></i>
+                            <i class="devicon-mysql-plain colored" title="MySQL"></i>
+                            <i class="devicon-redis-plain colored" title="Redis"></i>
+                            <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
+                            <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
+                            <i class="devicon-nginx-original colored" title="Nginx"></i>
+                            <i class="devicon-tailwindcss-plain colored" title="Tailwind CSS"></i>
+                            <i class="devicon-git-plain colored" title="Git"></i>
+                            <i class="devicon-vscode-plain colored" title="VS Code"></i>
+                        </div>
+                    </div>
+                    <div class="bento-card feature-card code-poet">
+                        <h3>Code Poet</h3>
+                        <p class="feature-subtitle">TALK IS CHEAP. SHOW ME THE CODE</p>
+                        <div class="poet-lines">
+                            <p>"Code is poetry in motion"</p>
+                            <p>"Every bug tells a story"</p>
+                            <p>"Simplicity is the ultimate sophistication"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Timeline</h2>
+            <p class="section-subtitle scroll-reveal">一路走来</p>
+
+            <div class="timeline-track">
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026</div>
+                    <div class="timeline-content">
+                        <h3>持续探索中</h3>
+                        <div class="timeline-months">
+                            <div class="timeline-month">
+                                <span class="month-label">现在</span>
+                                <p>持续学习和开发中，期待创造更多有趣的项目</p>
+                            </div>
+                           <div class="timeline-month">
+                                <span class="month-label">5月</span>
+                                <p>由于编写博客时觉得没有一个好用的MarkDown编辑器，所以自己开发了一个</p>
+                                <p>对博客进一步优化完善，更新内容</p>
+                                <p>由于一言接口的使用人数较多，开发了基于Edgeone Pages的OneHitokoto-API项目</p>
+                                <p>对个人主页进行了优化完善，样式全新升级，同时保留了旧版</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">4月</span>
+                                <p>新域名sylv.top备案成功！首个备案域名.</p>
+                                <p>开发了基于Edgeone Pages的OnePic-API项目</p>
+                                <p>对博客进一步优化完善</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">3月</span>
+                                <p>开始真正意义上的博客搭建，并成功部署</p>
+                                <p>创建并部署了个人主页等项目</p>
+                                <p>由于觉得数字.xyz域名不美观，新购入了:sylv.top</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">2月</span>
+                                <p>接触到Vercel,Netlify等云平台，开始尝试部署自己的项目</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">1月</span>
+                                <p>发现了低价的.xyz域名注册服务商SpaceShip，新收获了域名:842166.xyz</p>
+                                <p>在CloudFlare Workers部署了一个自用的订阅管理系统</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h3>技术上平平无奇的一年，但似乎收获了些未曾拥有过的东西...</h3>
+                        <div class="timeline-months">
+                            <div class="timeline-month">
+                                <span class="month-label">12月</span>
+                                <p>对Github平台了解更加深入</p>
+                                <p>发现了echotrace，ChatLab等项目，对于微信聊天记录以及其他数据的导出解密和分析有了新的认识</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">7月</span>
+                                <p>在Github上找到了MemoTrace项目，学会了微信聊天记录的导出</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>逐渐成长</h3>
+                        <div class="timeline-months">
+                            <div class="timeline-month">
+                                <span class="month-label">8月</span>
+                                <p>QQ发布了官方机器人平台，使用Koishi平台搭建了自己的QQ机器人</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">5月</span>
+                                <p>深入对网络/服务器技术的学习，拥有了第一个属于自己的域名:zzrliu.xyz</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">4月</span>
+                                <p>购入了一部二手低端机，开始了刷机搞机root之路...</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">3月</span>
+                                <p>开眼看世界...</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>落笔生根</h3>
+                        <div class="timeline-months">
+                            <div class="timeline-month">
+                                <span class="month-label">12月</span>
+                                <p>当时似乎正值疫情停课在家，一个偶然的机会，接触到了halo博客系统,1panel...从此便一发不可收拾.</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">8月</span>
+                                <p>接触到Stable Diffusion，跟着秋葉aaaki开始了AI绘画之旅..</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">7月</span>
+                                <p>前不久入坑了原神，觉得太费肝了，了解到私服的存在，开始尝试搭建私服。由此初次接触到了Linux系统,VMware虚拟机,内网穿透等技术</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">4月</span>
+                                <p>接触到QQ机器人，利用野生框架与插件搭建了自己的QQ机器人</p>
+                            </div>
+                            <div class="timeline-month">
+                                <span class="month-label">2月</span>
+                                <p>接触到AI，开始尝试使用AI生成一些基础内容</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">早期</div>
+                    <div class="timeline-content">
+                        <h3>故事开始的地方</h3>
+                        <div class="timeline-months">
+                            <div class="timeline-month">
+                                <p>故事的开头总是这样，适逢其会，猝不及防...</p>
+                            </div>
+                        </div>
+                        <div class="timeline-month">
+                                <span class="month-label">When?</span>
+                                <p>（相隔太久已无法记起具体时间）</p>
+                                <p>由于当时没有手机，了解到模拟器</p>
+                                <p>入坑逃跑吧！少年。偶然接触到了外挂的存在，寻找外挂过程中不慎电脑被锁机...</p>
+                                <p>接触到WePE等软件，逐渐掌握Windows系统乃至其它操作系统重装等技术</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-quote quote-animate">
+                <p>一条时间线，装不下那些深夜的崩溃和天亮后的不甘</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Projects</h2>
+            <p class="section-subtitle scroll-reveal">Where ideas come to life</p>
+
+            <div class="project-list">
+                <a href="https://hitokoto.api.sylv.top/" target="_blank" rel="noopener noreferrer" class="project-item scroll-reveal">
+                    <div class="project-info">
+                        <h3 class="project-name">OneHitokoto API</h3>
+                        <p class="project-desc">随机一言 API 服务</p>
+                    </div>
+                    <span class="project-arrow">→</span>
+                </a>
+                <a href="https://pic.api.sylv.top" target="_blank" rel="noopener noreferrer" class="project-item scroll-reveal">
+                    <div class="project-info">
+                        <h3 class="project-name">OnePic API</h3>
+                        <p class="project-desc">随机图片 API 服务</p>
+                    </div>
+                    <span class="project-arrow">→</span>
+                </a>
+                <a href="https://pics.sylv.top" target="_blank" rel="noopener noreferrer" class="project-item scroll-reveal">
+                    <div class="project-info">
+                        <h3 class="project-name">PicSmaller</h3>
+                        <p class="project-desc">在线图片压缩服务</p>
+                    </div>
+                    <span class="project-arrow">→</span>
+                </a>
+                <a href="https://bing.sylv.top" target="_blank" rel="noopener noreferrer" class="project-item scroll-reveal">
+                    <div class="project-info">
+                        <h3 class="project-name">Daily Image</h3>
+                        <p class="project-desc">必应每日一图</p>
+                    </div>
+                    <span class="project-arrow">→</span>
+                </a>
+                <a href="https://md.sylv.top/" target="_blank" rel="noopener noreferrer" class="project-item scroll-reveal">
+                    <div class="project-info">
+                        <h3 class="project-name">Markdown 编辑器</h3>
+                        <p class="project-desc">在线 Markdown 编辑工具</p>
+                    </div>
+                    <span class="project-arrow">→</span>
+                </a>
+            </div>
+            <a href="https://github.com/zzrliu8421" target="_blank" rel="noopener noreferrer" class="view-more">View more on GitHub →</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://www.sylv.top/" title="首页"><i class="ri-home-fill"></i></a>
+            <a href="https://blog.sylv.top/" target="_blank" rel="noopener noreferrer" title="博客"><i class="ri-quill-pen-fill"></i></a>
+            <a href="mailto:sylvy@842166.xyz" title="Email"><i class="ri-mail-fill"></i></a>
+            <a href="https://github.com/zzrliu8421" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="ri-github-fill"></i></a>
+            <a href="https://qm.qq.com/q/Zv1uAlusee" target="_blank" rel="noopener noreferrer" title="QQ"><i class="ri-qq-fill"></i></a>
+        </div>
+        <p>© <span id="currentYear"></span> <a href="https://sylv.top/" target="_blank" rel="noopener noreferrer">Sylvy</a>. All rights reserved.</p>
+        <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2026013756号-1</a>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
