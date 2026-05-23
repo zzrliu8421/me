@@ -59,10 +59,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -96,6 +99,16 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+a:focus,
+a:active,
+button:focus,
+button:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* ========================================
@@ -1501,6 +1514,20 @@ a {
    响应式设计
    ======================================== */
 @media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: none;
+    }
+
+    a, button, .social-btn, .project-item, .nav-link, .like-card, .theme-btn {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
     .navbar {
         position: fixed;
         top: 0;
@@ -1509,12 +1536,16 @@ a {
         bottom: 0;
         background: var(--bg-color);
         flex-direction: column;
-        justify-content: center;
-        gap: 24px;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 16px;
+        padding: 100px 24px 40px;
         opacity: 0;
         visibility: hidden;
         transition: var(--transition);
         z-index: 1000;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .navbar.active {
@@ -1524,6 +1555,8 @@ a {
 
     .nav-link {
         font-size: 1.25rem;
+        padding: 12px 24px;
+        flex-shrink: 0;
     }
 
     .burger {
