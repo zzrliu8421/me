@@ -67,18 +67,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.navbar');
+    const navClose = document.querySelector('.nav-close');
+
+    function closeMenu() {
+        nav.classList.remove('active');
+        burger.classList.remove('active');
+    }
 
     burger.addEventListener('click', function () {
         nav.classList.toggle('active');
         burger.classList.toggle('active');
     });
 
+    if (navClose) {
+        navClose.addEventListener('click', closeMenu);
+    }
+
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            nav.classList.remove('active');
-            burger.classList.remove('active');
-        });
+        link.addEventListener('click', closeMenu);
     });
 
     window.addEventListener('scroll', function () {
@@ -475,6 +482,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (avatarClickArea) {
         avatarClickArea.addEventListener('click', (e) => {
+            avatarClickArea.style.animation = 'likeCardPop 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97)';
+            avatarClickArea.addEventListener('animationend', () => {
+                avatarClickArea.style.animation = '';
+            }, { once: true });
             triggerConfettiAndMessage(e, avatarClickArea);
         });
     }
